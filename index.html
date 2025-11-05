@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EBmedia – Startseite</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ====================== -->
+  <!-- NAVIGATION -->
+  <!-- ====================== -->
+  <header class="navbar">
+
+    <div class="nav-left">
+      <img src="assets/logo.png" alt="EBmedia Logo" class="logo">
+      <span class="brand">EBmedia</span>
+    </div>
+
+    <nav class="nav-right">
+      <ul class="nav-links">
+        <li><a href="index.html">Start</a></li>
+        <li><a href="leistungen.html">Leistungen</a></li>
+        <li><a href="strategien.html">Strategien</a></li>
+        <li><a href="projekte.html">Projekte</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <!-- ====================== -->
+  <!-- HERO -->
+  <!-- ====================== -->
+  <section class="hero">
+
+    <div class="pattern-layer"></div>
+
+    <div class="hero-content">
+
+      <h1>Digitale Marken. Sichtbar. Elegant.</h1>
+
+      <div class="keywords">
+        <span>Branding</span>
+        <span>Social Media</span>
+        <span>Performance</span>
+      </div>
+
+      <p class="agency-intro">
+        EBmedia ist eine Marketingagentur, die Marken sichtbar macht – mit klarem Design,
+        starken Social-Media-Konzepten und Content, der wirklich konvertiert.
+      </p>
+
+      <!-- ✅ Gründerin mit Label im Bild -->
+      <div class="founder">
+        <div class="founder-image-wrap">
+          <img src="assets/emma.jpg" alt="Emma Beckmann – Gründerin" class="media-tilt glow">
+          <div class="founder-label">Emma Beckmann – Founderin</div>
+        </div>
+      </div>
+
+      <!-- Karte -->
+      <div class="map-wrap">
+        <div class="map-overlay">Gelsenkirchen und Umkreis</div>
+        <iframe class="map"
+          src="https://www.google.com/maps?q=Gelsenkirchen&output=embed"
+          loading="lazy"></iframe>
+      </div>
+
+      <p class="agency-intro" style="margin-top: 80px;">
+        EBmedia gestaltet hochwertige, klare und wirkungsvolle Webauftritte – mit Fokus auf
+        Design, Ästhetik und strategischem Erfolg.
+      </p>
+
+      <a href="leistungen.html" class="btn">Jetzt entdecken</a>
+
+    </div>
+
+  </section>
+
+  <!-- Unterer transparenter Logo-Pattern-Bereich -->
+  <div class="bottom-logo-band"></div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© <span id="year"></span> EBmedia – Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

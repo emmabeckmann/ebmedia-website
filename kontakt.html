@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kontakt – EBmedia</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="kontakt">
+
+  <!-- NAVIGATION -->
+  <header class="navbar">
+    <div class="nav-left">
+      <img src="assets/logo.png" alt="EBmedia Logo" class="logo">
+      <span class="brand">EBmedia</span>
+    </div>
+
+    <nav class="nav-right">
+      <ul class="nav-links">
+        <li><a href="index.html">Start</a></li>
+        <li><a href="leistungen.html">Leistungen</a></li>
+        <li><a href="strategien.html">Strategien</a></li>
+        <li><a href="projekte.html">Projekte</a></li>
+        <li><a href="kontakt.html" class="active">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <!-- HERO / HEADER TEXT -->
+  <section class="contact-header">
+    <h1>Kontakt</h1>
+    <p>Kurze Wege, klare Antworten – ich freue mich auf deine Nachricht.</p>
+  </section>
+
+
+  <!-- PROFIL-KARTE -->
+  <section class="contact-section">
+    <div class="contact-card glass-card">
+
+      <img src="assets/emma.jpg" class="contact-photo" alt="Emma Beckmann">
+
+      <div class="contact-info">
+        <h3>Emma Beckmann</h3>
+        <p>Mit viel Gespür für Design, Trends und strategisches Marketing entstehen Inhalte,
+           die Wirkung zeigen – klar, modern und markenstark.</p>
+
+        <p class="mail"><a href="mailto:emmabeckmannb@gmail.com">emmabeckmannb@gmail.com</a></p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FORMULAR -->
+  <section class="contact-section">
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form glass-card">
+
+      <h2>Nachricht senden</h2>
+
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="email" name="email" placeholder="E-Mail" required>
+      <textarea name="message" rows="4" placeholder="Nachricht..." required></textarea>
+
+      <button type="submit" class="btn">Senden</button>
+
+    </form>
+  </section>
+
+
+  <!-- IMPRESSUM -->
+  <section id="impressum" class="legal-section">
+    <h1>Impressum</h1>
+
+    <div class="glass-card legal-box">
+      <h3>Angaben gemäß § 5 TMG</h3>
+      <p>
+        EBmedia<br>
+        Emma Beckmann<br>
+        Im Waldquartier 6<br>
+        45892 Gelsenkirchen<br>
+        Deutschland
+      </p>
+
+      <h3>Kontakt</h3>
+      <p>E-Mail: <a href="mailto:emmabeckmannb@gmail.com">emmabeckmannb@gmail.com</a></p>
+
+      <h3>Vertreten durch</h3>
+      <p>Emma Beckmann</p>
+    </div>
+  </section>
+
+
+  <!-- DATENSCHUTZ -->
+  <section id="datenschutz" class="legal-section">
+    <h1>Datenschutzerklärung</h1>
+
+    <div class="glass-card legal-box">
+      <p>Wir verarbeiten personenbezogene Daten ausschließlich zur Bearbeitung von Kontaktanfragen.
+         Eine Weitergabe an Dritte erfolgt nicht.</p>
+      <p>Du hast das Recht auf Auskunft, Berichtigung, Löschung sowie Beschwerde bei einer Aufsichtsbehörde.</p>
+      <p>Kontakt: <a href="mailto:emmabeckmannb@gmail.com">emmabeckmannb@gmail.com</a></p>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© <span id="year"></span> EBmedia – Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
+
+
+
+
+

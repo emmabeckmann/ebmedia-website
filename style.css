@@ -1,0 +1,753 @@
+/* =============================== */
+/* GLOBAL */
+/* =============================== */
+html {
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(180deg, #ffffff 0%, #f1e7ff 100%);
+  color: #4b2e83;
+  overflow-x: hidden;
+}
+
+/* =============================== */
+/* NAVBAR */
+/* =============================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 150px;
+  padding: 0 70px;
+
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.logo {
+  height: 165px;
+  width: auto;
+  object-fit: contain;
+  margin-top: -18px;
+  display: block;
+}
+
+.brand {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #4b2e83;
+  margin-top: 5px; 
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 48px;
+}
+
+.nav-links a {
+  color: #4b2e83;
+  font-size: 1.22rem;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  top: 5px;
+}
+
+.nav-links a:hover {
+  color: #7a42ff;
+}
+
+/* =============================== */
+/* HERO – STARTSEITE */
+/* =============================== */
+.hero {
+  position: relative;
+  padding: 60px 20px 120px;
+  min-height: 70vh;
+  text-align: center;
+}
+
+.pattern-layer {
+  position: absolute;
+  inset: 0;
+  background-image: url("assets/logo.png");
+  background-repeat: repeat;
+  background-size: 140px;
+  opacity: 0.16;
+  animation: drift 45s linear infinite;
+  z-index: 1;
+}
+
+@keyframes drift {
+  0% { background-position: 0 0; }
+  50% { background-position: 240px 220px; }
+  100% { background-position: 480px 440px; }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: -10px;
+}
+
+.hero-content h1 {
+  font-size: 3.1rem;
+  color: #32186d;
+  margin-bottom: 8px;
+}
+
+.keywords {
+  margin: 0 0 10px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  font-size: clamp(24px, 3.4vw, 38px);
+  font-weight: 800;
+}
+
+.keywords span {
+  background: linear-gradient(90deg, #7a42ff, #b388ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.agency-intro {
+  max-width: 720px;
+  margin: 12px auto 20px;
+  font-size: 1.18rem;
+  color: #5a4799;
+}
+
+/* FOUNDER BILD */
+.founder {
+  position: relative;
+  width: fit-content;
+  margin: 40px auto 70px;
+}
+
+.founder img {
+  width: 280px;
+  border-radius: 18px;
+  box-shadow: 0 20px 44px rgba(122, 66, 255, 0.25);
+  transition: 0.3s;
+}
+
+.founder img:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+.founder-label {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+
+  background: rgba(0,0,0,0.55);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  backdrop-filter: blur(4px);
+}
+
+/* MAP */
+.map-wrap {
+  position: relative;
+  max-width: 950px;
+  margin: 0 auto 130px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #e4d5ff;
+  box-shadow: 0 22px 58px rgba(75, 46, 131, 0.12);
+}
+
+.map {
+  width: 100%;
+  height: 520px;
+  border: 0;
+}
+
+.map-overlay {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 10px 18px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 16px;
+  border: 1px solid #dcd0ff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #3a1f77;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  background: #6b4aff;
+  color: white;
+  padding: 16px 40px;
+  border-radius: 40px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: #4b2e83;
+  transform: translateY(-4px);
+}
+
+/* =============================== */
+/* LEISTUNGEN – ZURÜCKGESETZT */
+/* =============================== */
+.services-page {
+  padding: 120px 40px;
+  text-align: center;
+}
+
+.services-page h1 {
+  font-size: 2.8rem;
+  color: #32186d;
+  margin-bottom: 15px;
+}
+
+.services-intro {
+  font-size: 1.2rem;
+  color: #5a4799;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 55px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 22px;
+  padding: 40px 32px;
+  text-align: center;
+  box-shadow: 0 14px 35px rgba(122, 66, 255, 0.18);
+  transition: 0.35s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 55px rgba(122, 66, 255, 0.28);
+}
+
+.mini-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+}
+
+/* =============================== */
+/* STRATEGIEN-SEITE */
+/* =============================== */
+.strategy-page {
+  padding: 120px 40px 140px;
+}
+
+.strategy-page h1 {
+  font-size: 2.9rem;
+  text-align: center;
+  color: #32186d;
+  margin-bottom: 15px;
+}
+
+.strategy-sub {
+  max-width: 680px;
+  margin: 0 auto 60px;
+  font-size: 1.17rem;
+  text-align: center;
+  color: #5b4a99;
+  line-height: 1.55;
+}
+
+.strategy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.strategy-arrow {
+  position: relative;
+  padding-left: 40px;
+}
+
+.arrow-accent {
+  position: absolute;
+  left: 0;
+  top: 20px;
+  width: 16px;
+  height: 70%;
+  background: linear-gradient(180deg, #7a42ff, #b388ff);
+  border-radius: 10px;
+  opacity: 0.38;
+  transition: 0.3s ease;
+}
+
+.strategy-box {
+  background: linear-gradient(135deg, rgba(255,255,255,0.40), rgba(240,230,255,0.55));
+  border: 1px solid rgba(140,110,255,0.25);
+  border-radius: 16px;
+  padding: 28px 40px;
+  backdrop-filter: blur(14px);
+
+  position: relative;
+  transition: 0.3s ease;
+  box-shadow: 0 12px 34px rgba(120,65,255,0.15);
+}
+
+.strategy-box h3 {
+  font-size: 1.35rem;
+  color: #3a1f77;
+  margin-bottom: 10px;
+}
+
+.strategy-box p {
+  color: #5b4a99;
+  font-size: 1.07rem;
+}
+
+.strategy-box .arrow {
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #8856ff;
+  opacity: 0.28;
+  transition: 0.35s ease;
+}
+
+.strategy-box:hover {
+  transform: translateX(12px) scale(1.02);
+  box-shadow: 0 18px 46px rgba(120,65,255,0.28);
+}
+
+.strategy-box:hover .arrow {
+  right: 14px;
+  opacity: 0.75;
+}
+
+/* =============================== */
+/* FOOTER */
+/* =============================== */
+footer {
+  text-align: center;
+  padding: 40px 0;
+  background: #f9f6ff;
+  font-size: 1rem;
+  color: #4b2e83;
+}
+/* =============================== */
+/* PROJEKTSEITE – BILDGRÖSSEN */
+/* =============================== */
+
+.project-grid img {
+  width: 320px;        /* vorher: volle Breite → jetzt deutlich kleiner */
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 12px 28px rgba(75, 46, 131, 0.18);
+  transition: 0.3s ease;
+}
+
+.project-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+/* Hover Effekt etwas eleganter */
+.project-grid img:hover {
+  transform: translateY(-6px) scale(1.03);
+}
+/* =============================== */
+/* PROJEKTSEITE – VIDEO */
+/* =============================== */
+
+.project-video {
+  width: 100%;
+  max-width: 850px;      /* verhindert zu große Darstellung */
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(75, 46, 131, 0.22);
+  margin-bottom: 20px;
+  display: block;
+}
+/* ===================================== */
+/* PROJEKTSEITE */
+/* ===================================== */
+
+.projects-page h1 {
+  text-align: center;
+  font-size: 2.7rem;
+  color: #32186d;
+  margin-bottom: 10px;
+}
+
+.projects-sub {
+  text-align: center;
+  font-size: 1.15rem;
+  color: #5b4a99;
+  margin-bottom: 60px;
+}
+
+/* VIDEO */
+.project-block {
+  max-width: 900px;
+  margin: 0 auto 90px;
+  text-align: center;
+  position: relative;
+}
+
+.project-video {
+  width: 100%;
+  max-width: 780px;
+  border-radius: 18px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 18px 40px rgba(75, 46, 131, 0.22);
+}
+
+/* Video Beschriftung wie „Founderin“ */
+.project-label {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.55);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  backdrop-filter: blur(4px);
+}
+
+/* Beschreibung unter Video */
+.project-description {
+  max-width: 680px;
+  margin: 25px auto 0;
+  color: #5a4799;
+  font-size: 1.12rem;
+}
+
+/* BILDERGRID */
+.project-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 80px;
+}
+
+/* Bildcontainer */
+.project-image-wrap {
+  position: relative;
+  width: 320px;             /* ✅ deutlich kleiner */
+}
+
+.project-image-wrap img {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 16px 36px rgba(75, 46, 131, 0.22);
+  display: block;
+}
+
+/* Beschriftung */
+.image-label {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  padding: 6px 12px;
+  background: rgba(0,0,0,0.55);
+  color: white;
+  font-size: 0.92rem;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+}
+/* ========================= */
+/*   PROJEKTSEITE – VIDEO    */
+/* ========================= */
+
+.project-media-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.project-video-wrap {
+  position: relative;
+  width: 420px;            /* ✅ Video klein und elegant */
+  max-width: 90%;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 18px 48px rgba(75,46,131,0.18);
+}
+
+.project-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 18px;
+}
+
+/* Beschreibung unten links */
+.media-label {
+  position: absolute;
+  bottom: 10px;
+  left: 14px;
+  color: white;
+  font-size: 0.9rem;
+  background: rgba(0,0,0,0.35);
+  padding: 6px 12px;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+}
+/* =============================== */
+/* PROJEKTSEITE – VIDEO */
+/* =============================== */
+
+.project-media-container {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0 80px;
+}
+
+.project-video-wrap {
+  position: relative;
+  width: 60%;               /* ✅ kleiner – vorher fast 100% */
+  max-width: 800px;         /* ✅ maximale Videogröße */
+  min-width: 300px;
+}
+
+.project-video {
+  width: 100%;
+  border-radius: 22px;
+  box-shadow: 0 20px 40px rgba(60, 20, 120, 0.18);
+  border: 1px solid rgba(125, 90, 200, 0.22);
+}
+
+.media-label {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 14px;
+  font-size: 0.85rem;
+  backdrop-filter: blur(4px);
+}
+/* ===================================== */
+/* PROJEKTSEITE – KLEINES VIDEO DESIGN   */
+/* ===================================== */
+
+.project-media-container.small {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0 60px;
+}
+
+.project-video-wrap.small {
+  position: relative;
+  width: 32%;               /* ✅ extrem klein */
+  max-width: 380px;         /* ✅ absolute Grenze */
+  min-width: 240px;
+}
+
+.project-video.small {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 16px 35px rgba(60, 20, 120, 0.16);
+  border: 1px solid rgba(125, 90, 200, 0.18);
+}
+
+.media-label {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  padding: 5px 12px;
+  font-size: 0.80rem;
+  border-radius: 12px;
+  backdrop-filter: blur(3px);
+}
+.project-description {
+  margin-bottom: 80px; /* vorher kleiner → jetzt deutlich mehr Abstand */
+}
+/* =============================== */
+/* KONTAKTSEITE – EDLES PREMIUM DESIGN */
+/* =============================== */
+
+.contact-header {
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+
+.contact-header h1 {
+  font-size: 2.8rem;
+  color: #32186d;
+}
+
+.contact-header p {
+  font-size: 1.15rem;
+  color: #5a4799;
+  margin-top: 8px;
+}
+
+/* Sektionen korrekt ausgerichtet */
+.contact-section {
+  max-width: 900px;
+  margin: 0 auto 70px;
+  padding: 0 20px;
+}
+
+/* Glas-Effekt Karten */
+.glass-card {
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(150,120,255,0.25);
+  box-shadow: 0 18px 45px rgba(85,40,170,0.15);
+  backdrop-filter: blur(14px);
+  padding: 35px 40px;
+  border-radius: 22px;
+}
+
+/* Profilkarte */
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.contact-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(80,45,150,0.18);
+}
+
+.contact-info h3 {
+  font-size: 1.6rem;
+  color: #3a1f77;
+  margin-bottom: 6px;
+}
+
+.contact-info p {
+  color: #5a4799;
+  line-height: 1.55;
+}
+
+.contact-info .mail a {
+  color: #6b4aff;
+  font-weight: 600;
+}
+
+/* Formular */
+.contact-form h2 {
+  text-align: center;
+  margin-bottom: 18px;
+  color: #3b1e7e;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid #d7c8ff;
+  padding: 14px 18px;
+  font-size: 1rem;
+  border-radius: 14px;
+  margin-bottom: 18px;
+  outline: none;
+  color: #4a3a88;
+  background: rgba(255,255,255,0.85);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #9d77ff;
+  box-shadow: 0 0 0 3px rgba(157,119,255,0.25);
+}
+
+/* Impressum & Datenschutz */
+.legal-section {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.legal-box {
+  text-align: left;
+  margin-top: 25px;
+  line-height: 1.7;
+}
+
+.legal-box h3 {
+  color: #3a1f77;
+  margin-top: 18px;
+  margin-bottom: 6px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
