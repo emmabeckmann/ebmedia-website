@@ -827,6 +827,14 @@ footer {
     overflow-x: visible !important;
   }
 }
+/* manuelle Silbentrennung wirklich nutzen */
+.hyph-manual{
+  -webkit-hyphens: manual !important;
+  hyphens: manual !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+}
+
 
 
 
