@@ -15,6 +15,10 @@ body {
   color: #4b2e83;
   overflow-x: hidden;
 }
+html, body {
+  overflow-x: hidden; /* verhindert seitliches Scrollen */
+  width: 100%;
+}
 
 /* =============================== */
 /* NAVBAR */
@@ -1008,6 +1012,57 @@ footer {
     padding: 20px 0;
   }
 }
+/* =============================== */
+/* MOBILE FIX – NAVIGATION & HEADER */
+/* =============================== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;               /* bricht Elemente um, wenn zu breit */
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    height: auto;
+  }
+
+  .nav-left {
+    flex: 1 1 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    height: 70px;                  /* kleineres Logo */
+    margin-top: 0;
+  }
+
+  .brand {
+    font-size: 1.2rem;
+    margin-left: 10px;
+  }
+
+  /* Navigation-Links */
+  .nav-right {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    overflow-x: hidden;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+    display: block;
+  }
+}
+
 
 
 
