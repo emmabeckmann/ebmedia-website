@@ -805,5 +805,28 @@ footer {
     overflow-x: hidden !important;
   }
 }
+/* ✅ iPhone Fix: saubere Silbentrennung für lange deutsche Wörter */
+@media (max-width: 768px) {
+  .strategy-page h1 {
+    white-space: normal !important;
+    word-break: normal !important;       /* keine brutalen Trennungen */
+    overflow-wrap: normal !important;
+    hyphens: auto !important;
+    -webkit-hyphens: auto !important;
+
+    font-size: clamp(1.9rem, 6.8vw, 2.6rem) !important;
+    line-height: 1.15 !important;
+    max-width: 90vw !important;
+    margin: 0 auto !important;
+    padding: 0 4vw !important;
+    text-align: center !important;
+  }
+
+  /* Container darf nichts abschneiden */
+  .strategy-page {
+    overflow-x: visible !important;
+  }
+}
+
 
 
