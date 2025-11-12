@@ -936,5 +936,78 @@ footer {
     font-size: 1.2rem;
   }
 }
+/* =============================== */
+/*   RESPONSIVE – MOBILE FIXES     */
+/* =============================== */
+@media (max-width: 768px) {
+
+  /* NAVBAR kleiner & bündig */
+  .navbar {
+    height: 100px;
+    padding: 0 20px;
+  }
+
+  .logo {
+    height: 100px;
+    margin-top: -10px;
+  }
+
+  .brand {
+    font-size: 1.1rem;
+  }
+
+  /* HERO text lesbarer */
+  .hero {
+    padding: 40px 16px 60px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .agency-intro {
+    font-size: 1rem;
+    padding: 0 8px;
+  }
+
+  /* MAP-Bereich */
+  .map-wrap {
+    width: 100%;
+    margin: 0 auto 40px;
+    border-radius: 12px;
+    box-shadow: none;
+  }
+
+  .map {
+    width: 100%;
+    height: 250px; /* ✅ statt 520px */
+  }
+
+  .map-overlay {
+    font-size: 0.9rem;
+    top: 10px;
+    left: 10px;
+    padding: 6px 10px;
+  }
+
+  /* BUTTON kleiner */
+  .btn {
+    padding: 12px 28px;
+    font-size: 1rem;
+  }
+
+  /* FOUNDER Bild mittig & kleiner */
+  .founder img {
+    width: 200px;
+  }
+
+  /* Text unten */
+  footer {
+    font-size: 0.9rem;
+    padding: 20px 0;
+  }
+}
+
 
 
