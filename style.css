@@ -1277,6 +1277,51 @@ footer {
     overflow: visible !important;
   }
 }
+/* ========================================= */
+/* ✅ FINAL FIX – Navbar horizontal scrollbar, Seite bleibt fixiert */
+/* ========================================= */
+@media (max-width: 768px) {
+
+  /* Website darf nicht seitlich scrollen */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100%;
+  }
+
+  /* Nur die Navigationsleiste darf horizontal scrollen */
+  .navbar {
+    overflow: visible !important;
+  }
+
+  .nav-right {
+    display: block !important;
+    overflow-x: scroll !important;
+    overflow-y: visible !important;
+    -webkit-overflow-scrolling: touch !important;
+    white-space: nowrap !important;
+    width: 100%;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .nav-right::-webkit-scrollbar {
+    display: none; /* Safari & Chrome */
+  }
+
+  .nav-links {
+    display: inline-flex !important;
+    gap: 28px;
+    padding: 10px 8px;
+  }
+
+  .nav-links a {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #4b2e83;
+    text-decoration: none;
+    line-height: 1.5em;
+  }
+}
 
 
 
