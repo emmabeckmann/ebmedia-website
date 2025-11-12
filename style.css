@@ -9,21 +9,15 @@ html {
   padding: 0;
   box-sizing: border-box;
 }
+html, body {
+  overflow-x: hidden; /* verhindert horizontales Scrollen */
+  width: 100%;
+}
 body {
   font-family: "Poppins", sans-serif;
   background: linear-gradient(180deg, #ffffff 0%, #f1e7ff 100%);
   color: #4b2e83;
-  overflow-x: hidden;
 }
-html, body {
-  overflow-x: hidden; /* verhindert seitliches Scrollen */
-  width: 100%;
-}
-html, body {
-  overflow-x: hidden; /* Kein horizontales Scrollen auf der Seite */
-  width: 100%;
-}
-
 
 /* =============================== */
 /* NAVBAR */
@@ -35,11 +29,9 @@ html, body {
   width: 100%;
   height: 150px;
   padding: 0 70px;
-
   background: rgba(255,255,255,0.96);
   backdrop-filter: blur(12px);
   box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -53,22 +45,21 @@ html, body {
 
 .logo {
   height: 165px;
-  width: auto;
   object-fit: contain;
   margin-top: -18px;
-  display: block;
 }
 
 .brand {
   font-size: 1.35rem;
   font-weight: 600;
   color: #4b2e83;
-  margin-top: 5px; 
+  margin-top: 5px;
 }
 
 .nav-right {
   display: flex;
   align-items: center;
+  overflow-x: visible;
 }
 
 .nav-links {
@@ -84,6 +75,7 @@ html, body {
   text-decoration: none;
   position: relative;
   top: 5px;
+  transition: color .3s ease;
 }
 
 .nav-links a:hover {
@@ -98,6 +90,7 @@ html, body {
   padding: 60px 20px 120px;
   min-height: 70vh;
   text-align: center;
+  overflow-x: hidden;
 }
 
 .pattern-layer {
@@ -129,6 +122,7 @@ html, body {
   font-size: 3.1rem;
   color: #32186d;
   margin-bottom: 8px;
+  line-height: 1.2;
 }
 
 .keywords {
@@ -152,9 +146,12 @@ html, body {
   margin: 12px auto 20px;
   font-size: 1.18rem;
   color: #5a4799;
+  line-height: 1.6;
 }
 
-/* FOUNDER BILD */
+/* =============================== */
+/* FOUNDER */
+/* =============================== */
 .founder {
   position: relative;
   width: fit-content;
@@ -176,7 +173,6 @@ html, body {
   position: absolute;
   left: 14px;
   bottom: 14px;
-
   background: rgba(0,0,0,0.55);
   color: white;
   padding: 6px 14px;
@@ -185,7 +181,9 @@ html, body {
   backdrop-filter: blur(4px);
 }
 
+/* =============================== */
 /* MAP */
+/* =============================== */
 .map-wrap {
   position: relative;
   max-width: 950px;
@@ -215,7 +213,9 @@ html, body {
   color: #3a1f77;
 }
 
+/* =============================== */
 /* BUTTON */
+/* =============================== */
 .btn {
   display: inline-block;
   background: #6b4aff;
@@ -234,7 +234,7 @@ html, body {
 }
 
 /* =============================== */
-/* LEISTUNGEN – ZURÜCKGESETZT */
+/* SERVICES */
 /* =============================== */
 .services-page {
   padding: 120px 40px;
@@ -252,6 +252,7 @@ html, body {
   color: #5a4799;
   max-width: 700px;
   margin: 0 auto 60px;
+  line-height: 1.6;
 }
 
 .services-grid {
@@ -281,9 +282,8 @@ html, body {
   height: 80px;
   margin-bottom: 20px;
 }
-
 /* =============================== */
-/* STRATEGIEN-SEITE */
+/* STRATEGIEN */
 /* =============================== */
 .strategy-page {
   padding: 120px 40px 140px;
@@ -336,7 +336,6 @@ html, body {
   border-radius: 16px;
   padding: 28px 40px;
   backdrop-filter: blur(14px);
-
   position: relative;
   transition: 0.3s ease;
   box-shadow: 0 12px 34px rgba(120,65,255,0.15);
@@ -384,47 +383,10 @@ footer {
   font-size: 1rem;
   color: #4b2e83;
 }
+
 /* =============================== */
-/* PROJEKTSEITE – BILDGRÖSSEN */
+/* PROJEKTE */
 /* =============================== */
-
-.project-grid img {
-  width: 320px;        /* vorher: volle Breite → jetzt deutlich kleiner */
-  height: auto;
-  border-radius: 16px;
-  object-fit: cover;
-  box-shadow: 0 12px 28px rgba(75, 46, 131, 0.18);
-  transition: 0.3s ease;
-}
-
-.project-grid {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  margin-bottom: 60px;
-}
-
-/* Hover Effekt etwas eleganter */
-.project-grid img:hover {
-  transform: translateY(-6px) scale(1.03);
-}
-/* =============================== */
-/* PROJEKTSEITE – VIDEO */
-/* =============================== */
-
-.project-video {
-  width: 100%;
-  max-width: 850px;      /* verhindert zu große Darstellung */
-  border-radius: 18px;
-  box-shadow: 0 18px 40px rgba(75, 46, 131, 0.22);
-  margin-bottom: 20px;
-  display: block;
-}
-/* ===================================== */
-/* PROJEKTSEITE */
-/* ===================================== */
-
 .projects-page h1 {
   text-align: center;
   font-size: 2.7rem;
@@ -439,7 +401,28 @@ footer {
   margin-bottom: 60px;
 }
 
-/* VIDEO */
+.project-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 80px;
+}
+
+.project-grid img {
+  width: 320px;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 12px 28px rgba(75, 46, 131, 0.18);
+  transition: 0.3s ease;
+}
+
+.project-grid img:hover {
+  transform: translateY(-6px) scale(1.03);
+}
+
+/* Video Block */
 .project-block {
   max-width: 900px;
   margin: 0 auto 90px;
@@ -456,7 +439,6 @@ footer {
   box-shadow: 0 18px 40px rgba(75, 46, 131, 0.22);
 }
 
-/* Video Beschriftung wie „Founderin“ */
 .project-label {
   position: absolute;
   bottom: 18px;
@@ -470,163 +452,18 @@ footer {
   backdrop-filter: blur(4px);
 }
 
-/* Beschreibung unter Video */
+/* Beschreibung */
 .project-description {
   max-width: 680px;
-  margin: 25px auto 0;
+  margin: 25px auto 80px;
   color: #5a4799;
   font-size: 1.12rem;
+  line-height: 1.6;
 }
 
-/* BILDERGRID */
-.project-grid {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  margin-bottom: 80px;
-}
-
-/* Bildcontainer */
-.project-image-wrap {
-  position: relative;
-  width: 320px;             /* ✅ deutlich kleiner */
-}
-
-.project-image-wrap img {
-  width: 100%;
-  border-radius: 18px;
-  box-shadow: 0 16px 36px rgba(75, 46, 131, 0.22);
-  display: block;
-}
-
-/* Beschriftung */
-.image-label {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
-  padding: 6px 12px;
-  background: rgba(0,0,0,0.55);
-  color: white;
-  font-size: 0.92rem;
-  border-radius: 10px;
-  backdrop-filter: blur(4px);
-}
-/* ========================= */
-/*   PROJEKTSEITE – VIDEO    */
-/* ========================= */
-
-.project-media-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 60px;
-}
-
-.project-video-wrap {
-  position: relative;
-  width: 420px;            /* ✅ Video klein und elegant */
-  max-width: 90%;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 18px 48px rgba(75,46,131,0.18);
-}
-
-.project-video {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 18px;
-}
-
-/* Beschreibung unten links */
-.media-label {
-  position: absolute;
-  bottom: 10px;
-  left: 14px;
-  color: white;
-  font-size: 0.9rem;
-  background: rgba(0,0,0,0.35);
-  padding: 6px 12px;
-  border-radius: 10px;
-  backdrop-filter: blur(4px);
-}
 /* =============================== */
-/* PROJEKTSEITE – VIDEO */
+/* KONTAKT */
 /* =============================== */
-
-.project-media-container {
-  display: flex;
-  justify-content: center;
-  margin: 40px 0 80px;
-}
-
-.project-video-wrap {
-  position: relative;
-  width: 60%;               /* ✅ kleiner – vorher fast 100% */
-  max-width: 800px;         /* ✅ maximale Videogröße */
-  min-width: 300px;
-}
-
-.project-video {
-  width: 100%;
-  border-radius: 22px;
-  box-shadow: 0 20px 40px rgba(60, 20, 120, 0.18);
-  border: 1px solid rgba(125, 90, 200, 0.22);
-}
-
-.media-label {
-  position: absolute;
-  bottom: 14px;
-  left: 14px;
-  background: rgba(0,0,0,0.45);
-  color: #fff;
-  padding: 6px 14px;
-  border-radius: 14px;
-  font-size: 0.85rem;
-  backdrop-filter: blur(4px);
-}
-/* ===================================== */
-/* PROJEKTSEITE – KLEINES VIDEO DESIGN   */
-/* ===================================== */
-
-.project-media-container.small {
-  display: flex;
-  justify-content: center;
-  margin: 40px 0 60px;
-}
-
-.project-video-wrap.small {
-  position: relative;
-  width: 32%;               /* ✅ extrem klein */
-  max-width: 380px;         /* ✅ absolute Grenze */
-  min-width: 240px;
-}
-
-.project-video.small {
-  width: 100%;
-  border-radius: 20px;
-  box-shadow: 0 16px 35px rgba(60, 20, 120, 0.16);
-  border: 1px solid rgba(125, 90, 200, 0.18);
-}
-
-.media-label {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  background: rgba(0,0,0,0.45);
-  color: #fff;
-  padding: 5px 12px;
-  font-size: 0.80rem;
-  border-radius: 12px;
-  backdrop-filter: blur(3px);
-}
-.project-description {
-  margin-bottom: 80px; /* vorher kleiner → jetzt deutlich mehr Abstand */
-}
-/* =============================== */
-/* KONTAKTSEITE – EDLES PREMIUM DESIGN */
-/* =============================== */
-
 .contact-header {
   text-align: center;
   margin-top: 80px;
@@ -644,7 +481,6 @@ footer {
   margin-top: 8px;
 }
 
-/* Sektionen korrekt ausgerichtet */
 .contact-section {
   max-width: 900px;
   margin: 0 auto 70px;
@@ -737,385 +573,536 @@ footer {
   margin-top: 18px;
   margin-bottom: 6px;
 }
-
 /* =============================== */
 /* 📱 MOBILE OPTIMIERUNG */
 /* =============================== */
-
 @media (max-width: 1024px) {
   .navbar {
     padding: 0 30px;
     height: 120px;
   }
-
-  .logo {
-    height: 120px;
-  }
-
-  .nav-links {
-    gap: 28px;
-  }
-
-  .hero-content h1 {
-    font-size: 2.4rem;
-  }
-
-  .agency-intro {
-    font-size: 1rem;
-    padding: 0 10px;
-  }
-
-  .map {
-    height: 400px;
-  }
+  .logo { height: 120px; }
+  .nav-links { gap: 28px; }
+  .hero-content h1 { font-size: 2.4rem; }
+  .agency-intro { font-size: 1rem; padding: 0 10px; }
+  .map { height: 400px; }
 }
 
 @media (max-width: 768px) {
-  /* --- Navigation umstellen --- */
-  .nav-right {
-    display: none; /* Menü ausblenden */
-  }
 
+  /* =============================== */
+  /* 🟣 NAVBAR – SCROLLBAR ONLY HERE */
+  /* =============================== */
   .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 8px 0;
+    height: auto;
+    background: rgba(255,255,255,0.97);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+  }
+
+  .nav-left {
+    width: 100%;
+    display: flex;
     justify-content: space-between;
-    padding: 0 20px;
-    height: 100px;
+    align-items: center;
+    padding: 0 16px;
   }
 
-  .nav-left .brand {
-    font-size: 1.1rem;
+  .logo { height: 70px; }
+  .brand { font-size: 1.1rem; font-weight: 600; }
+
+  /* Scrollbarer Nav-Bereich */
+  .nav-right {
+    width: 100%;
+    overflow-x: auto; /* ✅ Nur hier scrollen */
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    scrollbar-width: none;
+    background: rgba(255,255,255,0.96);
+    border-top: 1px solid rgba(0,0,0,0.05);
+  }
+  .nav-right::-webkit-scrollbar { display: none; }
+
+  .nav-links {
+    display: inline-flex;
+    gap: 24px;
+    padding: 10px 20px;
   }
 
-  /* --- Hero-Bereich --- */
+  .nav-links a {
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #4b2e83;
+    display: inline-block;
+  }
+  .nav-links a:hover { color: #7a42ff; }
+
+  /* =============================== */
+  /* HERO / MAP / CONTENT */
+  /* =============================== */
   .hero-content h1 {
-    font-size: 1.9rem;
+    font-size: 2rem;
     line-height: 1.3;
-    padding: 0 10px;
+    padding: 0 12px;
   }
-
-  .keywords {
-    font-size: 1.3rem;
+  .agency-intro {
+    font-size: 1rem;
+    line-height: 1.6;
   }
+  .founder img { width: 200px; }
+  .map { height: 260px; }
 
-  .founder img {
-    width: 210px;
-  }
-
-  .map {
-    height: 300px;
-  }
-
-  /* --- Services --- */
-  .services-page {
+  /* SERVICES / STRATEGY */
+  .services-page, .strategy-page {
     padding: 80px 20px;
   }
-
-  .service-card {
-    padding: 28px 22px;
+  .service-card, .strategy-box {
+    padding: 26px 22px;
   }
 
-  /* --- Strategien --- */
-  .strategy-page {
-    padding: 80px 20px;
-  }
-
-  .strategy-box {
-    padding: 24px 24px;
-  }
-
-  /* --- Projekte --- */
+  /* PROJECTS */
   .project-grid img {
     width: 100%;
     max-width: 300px;
   }
-
-  .project-video {
-    max-width: 100%;
+  .project-description {
+    font-size: 1rem;
+    padding: 0 10px;
   }
 
-  /* --- Kontaktseite --- */
+  /* CONTACT */
   .contact-card {
     flex-direction: column;
     text-align: center;
   }
-
   .contact-photo {
-    width: 120px;
-    height: 120px;
+    width: 120px; height: 120px;
   }
+  .contact-info h3 { font-size: 1.3rem; }
 
-  .contact-info h3 {
-    font-size: 1.3rem;
-  }
-
-  /* --- Footer --- */
+  /* FOOTER */
   footer {
     font-size: 0.9rem;
     padding: 25px 0;
   }
 }
 
+/* =============================== */
+/* 📱 SMALL PHONES (≤480 px) */
+/* =============================== */
 @media (max-width: 480px) {
-  .navbar {
-    height: 90px;
-  }
+  .navbar { height: 90px; }
+  .brand { font-size: 1rem; }
+  .hero-content h1 { font-size: 1.6rem; }
+  .agency-intro { font-size: 0.95rem; }
+  .btn { padding: 12px 28px; font-size: 1rem; }
+  .service-card h3 { font-size: 1.1rem; }
+  .service-card p { font-size: 0.95rem; }
+  footer p { font-size: 0.85rem; }
 
-  .brand {
-    font-size: 1rem;
-  }
-
-  .hero-content h1 {
-    font-size: 1.5rem;
-  }
-
-  .agency-intro {
-    font-size: 0.95rem;
-  }
-
-  .btn {
-    padding: 12px 28px;
-    font-size: 1rem;
-  }
-
-  .map {
-    height: 240px;
-  }
-
-  .service-card h3 {
-    font-size: 1.1rem;
-  }
-
-  .service-card p {
-    font-size: 0.95rem;
-  }
-
-  footer p {
-    font-size: 0.85rem;
-  }
-}
-
-/* =============================== */
-/* 📱 MOBILE NAVIGATION (Hamburger) */
-/* =============================== */
-
-/* Hamburger-Button */
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  color: #4b2e83;
-  cursor: pointer;
-  user-select: none;
-}
-
-/* Navigation Standard */
-.nav-right {
-  display: flex;
-}
-
-/* --- Mobile Ansicht --- */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-right {
-    display: none; /* standardmäßig ausgeblendet */
+  /* Leichte optische Verfeinerung – Schatten als Hinweis, dass Nav-Hub scrollbar ist */
+  .nav-right::after {
+    content: "";
     position: absolute;
-    top: 100px;
+    top: 0;
     right: 0;
-    width: 100%;
-    background: rgba(255,255,255,0.98);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    text-align: center;
-    padding: 20px 0;
-    z-index: 999;
-  }
-
-  .nav-right.active {
-    display: block;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 18px;
-  }
-
-  .nav-links a {
-    font-size: 1.2rem;
+    width: 20px;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(0,0,0,0.05));
+    pointer-events: none;
   }
 }
-/* =============================== */
-/*   RESPONSIVE – MOBILE FIXES     */
-/* =============================== */
+/* =================================== */
+/* 🔧 FIX: Projekte-Seite zurücksetzen */
+/* =================================== */
+.projects-page {
+  padding: 120px 40px 140px !important;
+}
+
+.project-grid img {
+  width: 320px !important;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 12px 28px rgba(75, 46, 131, 0.18);
+  transition: 0.3s ease;
+}
+
+.project-grid img:hover {
+  transform: translateY(-6px) scale(1.03);
+}
+
+.project-block {
+  max-width: 900px;
+  margin: 0 auto 90px !important;
+  text-align: center;
+  position: relative;
+}
+
+.project-video {
+  width: 100% !important;
+  max-width: 850px !important;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(75, 46, 131, 0.22);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.project-description {
+  max-width: 680px !important;
+  margin: 25px auto 80px !important;
+  color: #5a4799;
+  font-size: 1.12rem;
+  line-height: 1.6;
+}
+
+.project-image-wrap {
+  position: relative;
+  width: 320px !important;
+}
+
+.project-image-wrap img {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 16px 36px rgba(75, 46, 131, 0.22);
+  display: block;
+}
+
+.image-label {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  padding: 6px 12px;
+  background: rgba(0,0,0,0.55);
+  color: white;
+  font-size: 0.92rem;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+}
+
+/* ========================================= */
+/* 🔧 PROJEKTE exakt wie vorher wiederherstellen */
+/*  (überschreibt nur die Projektseite)         */
+/* ========================================= */
+
+.projects-page { padding: 120px 40px 140px !important; }
+
+/* Video-Blöcke wieder zentriert & in Originalgröße */
+.project-media-container {
+  display: flex !important;
+  justify-content: center !important;
+  margin: 40px 0 80px !important;
+}
+
+.project-video-wrap {
+  position: relative !important;
+  width: auto !important;                 /* kein prozentuales Breiten-Layout */
+  max-width: 850px !important;            /* wie vorher */
+  min-width: 0 !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
+  box-shadow: 0 18px 40px rgba(75,46,131,0.22) !important;
+  border: 0 !important;                   /* evtl. hinzugekommene Border entfernen */
+  margin: 0 auto !important;
+}
+
+.project-video {
+  width: 100% !important;
+  max-width: 850px !important;            /* wie vorher */
+  height: auto !important;
+  border-radius: 18px !important;
+  box-shadow: 0 18px 40px rgba(75,46,131,0.22) !important;
+  border: 0 !important;
+  display: block !important;
+}
+
+/* Video-Label mittig unten im Video – wie vorher */
+.project-label {
+  position: absolute !important;
+  bottom: 18px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  background: rgba(0,0,0,0.55) !important;
+  color: #fff !important;
+  padding: 6px 14px !important;
+  border-radius: 10px !important;
+  font-size: 0.95rem !important;
+  backdrop-filter: blur(4px) !important;
+}
+
+/* Beschreibung unter dem Video – wie vorher */
+.project-description {
+  max-width: 680px !important;
+  margin: 25px auto 80px !important;
+  color: #5a4799 !important;
+  font-size: 1.12rem !important;
+  line-height: 1.6 !important;
+  text-align: center; /* falls verschoben */
+}
+
+/* Bildergrid unverändert (falls mobile Styles eingriffen) */
+.project-grid {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 40px !important;
+  flex-wrap: wrap !important;
+  margin-bottom: 80px !important;
+}
+
+.project-grid img {
+  width: 320px !important;
+  height: auto !important;
+  border-radius: 16px !important;
+  object-fit: cover !important;
+  box-shadow: 0 12px 28px rgba(75, 46, 131, 0.18) !important;
+  transition: 0.3s ease !important;
+}
+
+/* Mobile: trotzdem responsiv – skaliert nur proportional herunter */
 @media (max-width: 768px) {
+  .project-video-wrap,
+  .project-video { max-width: 100% !important; }
+  .project-description { padding: 0 12px !important; }
+}
 
-  /* NAVBAR kleiner & bündig */
-  .navbar {
-    height: 100px;
-    padding: 0 20px;
+/* =================================== */
+/* 🔧 Projekte – Video kleiner & Text im Video */
+/* =================================== */
+
+.project-media-container {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0 80px;
+}
+
+.project-video-wrap {
+  position: relative;
+  width: 420px;              /* ✅ kleiner & eleganter */
+  max-width: 90%;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(75, 46, 131, 0.22);
+  margin: 0 auto;
+}
+
+.project-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 18px;
+}
+
+/* Beschriftung direkt im Video unten zentriert */
+.project-label {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  backdrop-filter: blur(4px);
+}
+
+/* Beschreibung unter dem Video (nicht im Bild) */
+.project-description {
+  max-width: 680px;
+  margin: 25px auto 80px;
+  color: #5a4799;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Mobile: Video etwas breiter, aber kleinerer Text */
+@media (max-width: 768px) {
+  .project-video-wrap {
+    width: 90%;
+    max-width: 380px;       /* ✅ passt perfekt auf Handy */
   }
 
-  .logo {
-    height: 100px;
-    margin-top: -10px;
+  .project-label {
+    font-size: 0.85rem;
+    padding: 5px 12px;
   }
 
-  .brand {
-    font-size: 1.1rem;
-  }
-
-  /* HERO text lesbarer */
-  .hero {
-    padding: 40px 16px 60px;
-  }
-
-  .hero-content h1 {
-    font-size: 2rem;
-    line-height: 1.2;
-  }
-
-  .agency-intro {
+  .project-description {
     font-size: 1rem;
-    padding: 0 8px;
-  }
-
-  /* MAP-Bereich */
-  .map-wrap {
-    width: 100%;
-    margin: 0 auto 40px;
-    border-radius: 12px;
-    box-shadow: none;
-  }
-
-  .map {
-    width: 100%;
-    height: 250px; /* ✅ statt 520px */
-  }
-
-  .map-overlay {
-    font-size: 0.9rem;
-    top: 10px;
-    left: 10px;
-    padding: 6px 10px;
-  }
-
-  /* BUTTON kleiner */
-  .btn {
-    padding: 12px 28px;
-    font-size: 1rem;
-  }
-
-  /* FOUNDER Bild mittig & kleiner */
-  .founder img {
-    width: 200px;
-  }
-
-  /* Text unten */
-  footer {
-    font-size: 0.9rem;
-    padding: 20px 0;
+    padding: 0 10px;
   }
 }
-/* =============================== */
-/* MOBILE FIX – NAVIGATION & HEADER */
-/* =============================== */
+/* ======================================== */
+/* 🔧 FIX: Projekte-Video – wieder klein + Label im Video */
+/* ======================================== */
+
+.project-media-container {
+  display: flex !important;
+  justify-content: center !important;
+  margin: 40px 0 80px !important;
+}
+
+.project-video-wrap {
+  position: relative !important;
+  width: 420px !important;             /* ✅ feste kleinere Größe */
+  max-width: 90% !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
+  box-shadow: 0 18px 40px rgba(75, 46, 131, 0.22) !important;
+  margin: 0 auto !important;
+}
+
+.project-video {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  border-radius: 18px !important;
+}
+
+/* Label direkt im Video unten */
+.project-label {
+  position: absolute !important;
+  bottom: 14px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  background: rgba(0, 0, 0, 0.55) !important;
+  color: #fff !important;
+  padding: 6px 14px !important;
+  border-radius: 10px !important;
+  font-size: 0.9rem !important;
+  backdrop-filter: blur(4px) !important;
+  text-align: center !important;
+}
+
+/* Text unter dem Video */
+.project-description {
+  max-width: 680px !important;
+  margin: 25px auto 80px !important;
+  color: #5a4799 !important;
+  font-size: 1.1rem !important;
+  line-height: 1.6 !important;
+  text-align: center !important;
+}
+
+/* Mobile Optimierung */
 @media (max-width: 768px) {
-  .navbar {
-    flex-wrap: wrap;               /* bricht Elemente um, wenn zu breit */
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 16px;
-    height: auto;
+  .project-video-wrap {
+    width: 90% !important;
+    max-width: 380px !important;      /* ✅ kleiner auf Handy */
   }
 
-  .nav-left {
-    flex: 1 1 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  .project-label {
+    font-size: 0.85rem !important;
+    padding: 5px 12px !important;
   }
 
-  .logo {
-    height: 70px;                  /* kleineres Logo */
-    margin-top: 0;
-  }
-
-  .brand {
-    font-size: 1.2rem;
-    margin-left: 10px;
-  }
-
-  /* Navigation-Links */
-  .nav-right {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    overflow-x: hidden;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .nav-links a {
-    font-size: 1rem;
-    display: block;
+  .project-description {
+    font-size: 1rem !important;
+    padding: 0 10px !important;
   }
 }
-/* =============================== */
-/*   MOBILE NAVBAR – SCROLLBEREICH */
-/* =============================== */
+/* ======================================== */
+/* 🔧 FIX: Text wieder im Video unten */
+/* ======================================== */
+
+.project-video-wrap {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.project-label {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.2)) !important;
+  color: #fff !important;
+  font-size: 0.95rem !important;
+  padding: 10px 0 !important;
+  text-align: center !important;
+  border-radius: 0 0 18px 18px !important;
+  backdrop-filter: blur(3px) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.3px !important;
+}
+
+/* Mobile Version: etwas kleinerer Text */
 @media (max-width: 768px) {
+  .project-label {
+    font-size: 0.85rem !important;
+    padding: 8px 0 !important;
+  }
+}
+/* ======================================== */
+/* 🔧 FIX: Video-Text (.media-label) wieder im Video */
+/* ======================================== */
 
-  /* Navbar-Basis */
-  .navbar {
-    flex-wrap: wrap;
-    padding: 10px 12px;
-    height: auto;
-    justify-content: flex-start;
-    align-items: center;
+.project-video-wrap.small {
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 18px !important;
+  box-shadow: 0 18px 40px rgba(75, 46, 131, 0.22) !important;
+  width: 420px !important;
+  max-width: 90% !important;
+  margin: 0 auto !important;
+}
+
+.project-video.small {
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 18px !important;
+  display: block !important;
+}
+
+/* Text (media-label) unten im Video mit dunklem Verlauf */
+.media-label {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.25)) !important;
+  color: #fff !important;
+  font-size: 0.95rem !important;
+  text-align: center !important;
+  padding: 10px 0 !important;
+  border-radius: 0 0 18px 18px !important;
+  backdrop-filter: blur(3px) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.3px !important;
+  z-index: 2 !important;
+}
+
+/* Beschreibung bleibt darunter */
+.project-description {
+  max-width: 680px !important;
+  margin: 25px auto 80px !important;
+  color: #5a4799 !important;
+  font-size: 1.1rem !important;
+  line-height: 1.6 !important;
+  text-align: center !important;
+}
+
+/* Mobile-Version: etwas kleiner */
+@media (max-width: 768px) {
+  .project-video-wrap.small {
+    width: 90% !important;
+    max-width: 380px !important;
   }
 
-  /* Nav-Bereich darf scrollen */
-  .nav-right {
-    overflow-x: auto;    /* ✅ erlaubt horizontales Scrollen nur hier */
-    -webkit-overflow-scrolling: touch; /* sanftes Scrollen auf iOS */
-    display: block;
-    white-space: nowrap;
-    width: 100%;
-    scrollbar-width: none; /* Firefox: keine sichtbare Scrollbar */
+  .media-label {
+    font-size: 0.85rem !important;
+    padding: 8px 0 !important;
   }
 
-  .nav-right::-webkit-scrollbar {
-    display: none; /* Safari/Chrome: keine sichtbare Scrollbar */
-  }
-
-  .nav-links {
-    display: inline-flex; /* in einer Reihe */
-    gap: 24px;
-    padding: 10px 8px;
-  }
-
-  .nav-links a {
-    font-size: 1.1rem;
-    font-weight: 600;
-    text-decoration: none;
-    color: #4b2e83;
-    display: inline-block;
-  }
-
-  .logo {
-    height: 70px;
-  }
-
-  .brand {
-    font-size: 1.1rem;
-    margin-left: 10px;
+  .project-description {
+    font-size: 1rem !important;
+    padding: 0 10px !important;
   }
 }
 
