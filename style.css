@@ -1108,24 +1108,24 @@ footer {
 /* ======================================== */
 /
 /* =============================== */
-/*   MOBILE NAVBAR – SCROLLBEREICH (OPTIMIERT) */
+/* =============================== */
+/*   MOBILE NAVBAR – FINAL FIX (mehr Höhe, kein Text abgeschnitten) */
 /* =============================== */
 @media (max-width: 768px) {
 
-  /* --- Globale Einstellungen --- */
+  /* --- Globale Regeln --- */
   html, body {
     overflow-x: hidden !important;
     width: 100%;
   }
 
-  /* --- Navbar gesamt --- */
+  /* --- Navbar --- */
   .navbar {
-    flex-wrap: wrap;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: 160px !important;            /* mehr Platz für Logo & Text */
-    padding: 12px 0 16px 0 !important;
+    height: 178px !important;              /* ✅ etwas höher für vollen Text */
+    padding: 14px 0 20px 0 !important;
     background: rgba(255, 255, 255, 0.96);
     backdrop-filter: blur(12px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -1135,45 +1135,46 @@ footer {
     overflow: visible !important;
   }
 
-  /* --- Logo & Markenname --- */
+  /* --- Logo & Marke --- */
   .logo {
     height: 95px !important;
     width: auto;
-    object-fit: contain;
     display: block;
-    margin: 0 auto 4px auto;
+    object-fit: contain;
+    margin: 0 auto 6px auto;
   }
 
   .brand {
-    font-size: 1.3rem !important;
+    font-size: 1.35rem !important;
     font-weight: 600;
     color: #4b2e83;
     margin-bottom: 8px;
     text-align: center;
   }
 
-  /* --- Navigationsbereich (Hub) --- */
+  /* --- Nav-Hub (scrollbarer Bereich) --- */
   .nav-right {
     display: block !important;
     width: 100%;
-    overflow-x: auto !important;            /* ✅ erlaubt horizontales Scrollen */
+    overflow-x: auto !important;
     overflow-y: visible !important;
     -webkit-overflow-scrolling: touch !important;
     white-space: nowrap !important;
+    scrollbar-width: none;
     text-align: center;
-    scrollbar-width: none;                  /* Firefox: Scrollbar ausblenden */
-    padding-bottom: 8px;
+    padding: 10px 0 6px 0 !important;      /* ✅ mehr vertikaler Platz */
   }
 
   .nav-right::-webkit-scrollbar {
-    display: none;                          /* Safari/Chrome: keine sichtbare Scrollbar */
+    display: none;
   }
 
-  /* --- Links im Nav-Hub --- */
+  /* --- Nav-Links --- */
   .nav-links {
     display: inline-flex !important;
-    gap: 28px;
+    gap: 30px;
     justify-content: center;
+    align-items: center;
     padding: 6px 14px;
   }
 
@@ -1181,10 +1182,10 @@ footer {
     display: inline-block;
     font-size: 1.2rem;
     font-weight: 600;
-    text-decoration: none;
     color: #4b2e83;
-    line-height: 1.7em;
-    padding: 4px 0 2px 0;
+    text-decoration: none;
+    line-height: 1.9em;                    /* ✅ Buchstaben-Unterlänge sichtbar */
+    padding-bottom: 2px;
   }
 
   .nav-links a:hover {
