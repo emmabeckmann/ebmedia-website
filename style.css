@@ -19,6 +19,11 @@ html, body {
   overflow-x: hidden; /* verhindert seitliches Scrollen */
   width: 100%;
 }
+html, body {
+  overflow-x: hidden; /* Kein horizontales Scrollen auf der Seite */
+  width: 100%;
+}
+
 
 /* =============================== */
 /* NAVBAR */
@@ -1062,6 +1067,58 @@ footer {
     display: block;
   }
 }
+/* =============================== */
+/*   MOBILE NAVBAR – SCROLLBEREICH */
+/* =============================== */
+@media (max-width: 768px) {
+
+  /* Navbar-Basis */
+  .navbar {
+    flex-wrap: wrap;
+    padding: 10px 12px;
+    height: auto;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  /* Nav-Bereich darf scrollen */
+  .nav-right {
+    overflow-x: auto;    /* ✅ erlaubt horizontales Scrollen nur hier */
+    -webkit-overflow-scrolling: touch; /* sanftes Scrollen auf iOS */
+    display: block;
+    white-space: nowrap;
+    width: 100%;
+    scrollbar-width: none; /* Firefox: keine sichtbare Scrollbar */
+  }
+
+  .nav-right::-webkit-scrollbar {
+    display: none; /* Safari/Chrome: keine sichtbare Scrollbar */
+  }
+
+  .nav-links {
+    display: inline-flex; /* in einer Reihe */
+    gap: 24px;
+    padding: 10px 8px;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #4b2e83;
+    display: inline-block;
+  }
+
+  .logo {
+    height: 70px;
+  }
+
+  .brand {
+    font-size: 1.1rem;
+    margin-left: 10px;
+  }
+}
+
 
 
 
