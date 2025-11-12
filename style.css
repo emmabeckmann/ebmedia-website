@@ -1105,6 +1105,84 @@ footer {
     padding: 0 10px !important;
   }
 }
+/* ======================================== */
+/* 🔧 MOBILE NAVBAR – größer, luftiger, keine abgeschnittenen Buchstaben */
+/* ======================================== */
+
+@media (max-width: 768px) {
+  /* Navbar insgesamt höher & zentrierter */
+  .navbar {
+    height: 120px !important;
+    padding: 14px 16px !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    background: rgba(255, 255, 255, 0.96) !important;
+    backdrop-filter: blur(12px) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+  }
+
+  /* Logo größer und mittiger */
+  .logo {
+    height: 90px !important;
+    width: auto !important;
+    margin-top: 0 !important;
+    object-fit: contain !important;
+  }
+
+  /* Brand leicht vergrößert */
+  .brand {
+    font-size: 1.3rem !important;
+    font-weight: 600 !important;
+    color: #4b2e83 !important;
+    margin-left: 8px !important;
+  }
+
+  /* Scrollbarer Nav-Hub mit mehr vertikalem Raum */
+  .nav-right {
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    -webkit-overflow-scrolling: touch !important;
+    display: block !important;
+    white-space: nowrap !important;
+    padding: 14px 0 !important;
+    scrollbar-width: none !important; /* Firefox */
+  }
+
+  .nav-right::-webkit-scrollbar {
+    display: none !important; /* Safari/Chrome */
+  }
+
+  .nav-links {
+    display: inline-flex !important;
+    gap: 28px !important;
+    padding: 10px 10px !important;
+    justify-content: flex-start !important;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+    line-height: 1.5em !important;
+    padding-bottom: 4px !important;
+    color: #4b2e83 !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+  }
+
+  /* optional: leichter Schatten unten für Tiefe */
+  .navbar::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.04), transparent);
+  }
+}
+
 
 
 
